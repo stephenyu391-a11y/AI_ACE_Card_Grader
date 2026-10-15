@@ -1,0 +1,8 @@
+# Step 3, session 2. Learning rate 1e-5 (R2). 12 passes as in R1, so that R4 and own-views compare with R1 exactly.
+# R4: R1 again with another seed. How much does chance move the score?
+--name r4-seed1    --fold 0 --epochs 12 --lr 1e-5 --batch 8 --workers 12 --seed 1
+# Method 4 (agreed in turn 32): corners, edges and centering judged only from their own views.
+--name own-views   --fold 0 --epochs 12 --lr 1e-5 --batch 8 --workers 12 --own-views
+# R6: is ConvNeXt Base useful? Small runs of 6 passes (turn 27 plan), compared with r5-2500 (DINOv2 on the same 2,500 cards).
+--name r6-convnext-lr1  --fold 0 --epochs 6 --lr 2e-5 --batch 8 --workers 12 --train-cards 2500 --backbone convnext-base-in22k
+--name r6-convnext-lr2  --fold 0 --epochs 6 --lr 1e-4 --batch 8 --workers 12 --train-cards 2500 --backbone convnext-base-in22k

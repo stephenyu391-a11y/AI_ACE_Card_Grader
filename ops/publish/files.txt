@@ -1,0 +1,35 @@
+# What goes into the public repository: one path per line, relative to the 44 project folder,
+# then " -> " and the path in the repository. Anything not listed here is never published.
+# Never add: Data/, models/, grader/out/, score_examples/, report/conversation.md, *.pdf, .claude*, keys.
+grader/data.py -> grader/data.py
+grader/views.py -> grader/views.py
+grader/model.py -> grader/model.py
+grader/scoring.py -> grader/scoring.py
+grader/metrics.py -> grader/metrics.py
+grader/train.py -> grader/train.py
+grader/run_queue.py -> grader/run_queue.py
+grader/check_data.py -> grader/check_data.py
+grader/compare_runs.py -> grader/compare_runs.py
+grader/requirements.txt -> grader/requirements.txt
+grader/bad_cut.csv -> grader/bad_cut.csv
+grader/session1.txt -> grader/session1.txt
+grader/session2.txt -> grader/session2.txt
+ops/config.sh -> ops/config.sh
+ops/setup_local.sh -> ops/setup_local.sh
+ops/vast_find.sh -> ops/vast_find.sh
+ops/offers_table.py -> ops/offers_table.py
+ops/vast_rent.sh -> ops/vast_rent.sh
+ops/upload.sh -> ops/upload.sh
+ops/start_runs.sh -> ops/start_runs.sh
+ops/watch.sh -> ops/watch.sh
+ops/status.sh -> ops/status.sh
+ops/report.sh -> ops/report.sh
+ops/vast_end.sh -> ops/vast_end.sh
+ops/README.md -> ops/README.md
+report/chart-fine-tuning.png -> docs/chart-fine-tuning.png
+report/chart-inference.png -> docs/chart-inference.png
+ops/publish/README.md -> README.md
+ops/publish/LICENSE -> LICENSE
+ops/publish/gitignore -> .gitignore
+ops/publish_github.sh -> ops/publish_github.sh
+ops/publish/files.txt -> ops/publish/files.txt

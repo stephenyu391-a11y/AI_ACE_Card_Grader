@@ -1,0 +1,17 @@
+# Never committed: card pictures, trained and pre-trained models, run outputs, keys.
+Data/
+models/
+grader/out/
+grader/kinds.csv
+grader/back_centres.npy
+score_examples/
+*.pt
+*.npz
+*.npy
+*.safetensors
+.venv/
+__pycache__/
+ops/.instance
+.env
+*.pem
+id_*

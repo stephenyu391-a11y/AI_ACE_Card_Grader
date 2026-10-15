@@ -1,0 +1,12 @@
+# Step 3, session 1 (turn 27 cost plan). All runs test on group 0; the best pass is kept.
+# R1 first: it answers the main question and sets the number of passes for everything after it.
+--name r1-base     --fold 0 --epochs 12 --lr 1e-5 --batch 8 --workers 12
+# R0: frozen model, only the head learns. The floor R1 must beat by 0.03.
+--name r0-frozen   --fold 0 --freeze --batch 8 --workers 12
+# R5: would more cards help? Same settings as R1 on fewer training cards. r5-2500 is also the reference for R2.
+--name r5-1000     --fold 0 --epochs 12 --lr 1e-5 --batch 8 --workers 12 --train-cards 1000
+--name r5-2500     --fold 0 --epochs 12 --lr 1e-5 --batch 8 --workers 12 --train-cards 2500
+# R2: is the learning rate right? Small runs against r5-2500.
+--name r2-lr-low   --fold 0 --epochs 12 --lr 3e-6 --batch 8 --workers 12 --train-cards 2500
+--name r2-lr-high  --fold 0 --epochs 12 --lr 3e-5 --batch 8 --workers 12 --train-cards 2500
+--name r5-5000     --fold 0 --epochs 12 --lr 1e-5 --batch 8 --workers 12 --train-cards 5000

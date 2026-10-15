@@ -1,0 +1,8 @@
+# Libraries the grader needs. On a rented graphics card machine, start from an image that
+# already contains PyTorch with CUDA, then run:  pip install -r requirements.txt
+# (torch is left out on purpose: installing it again would replace the CUDA build.)
+transformers
+timm
+safetensors
+pillow
+numpy
