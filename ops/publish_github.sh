@@ -58,7 +58,14 @@ git status --short
 # 4. Commit and push.
 [ "${1:-}" = --check ] && { echo "check only: nothing committed or pushed"; exit 0; }
 message="${1:?give a commit message, or --check}"
-git diff --cached --quiet && { echo "nothing changed since the last publish"; exit 0; }
-git commit -q -m "$message"
+if git diff --cached --quiet; then
+    # nothing new; but a commit whose push failed earlier is still sent
+    git fetch -q origin 2>/dev/null || true
+    if git rev-parse -q --verify origin/main > /dev/null && [ -z "$(git log origin/main..main --oneline)" ]; then
+        echo "nothing changed since the last publish"; exit 0
+    fi
+else
+    git commit -q -m "$message"
+fi
 git push -u origin main
 echo "published: https://github.com/stephenyu391-a11y/AI_ACE_Card_Grader"
